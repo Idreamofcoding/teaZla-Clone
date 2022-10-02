@@ -1,0 +1,161 @@
+.header {
+    display: flex;
+    background-color: transparent;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+    min-height: 5vh;
+    width: 90vw;
+    overflow: hidden;
+    margin: 0 96px;
+    top: 0;
+    z-index: 100;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+  
+  .header a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .header__logo img {
+    height: 10px;
+    width: 100px;
+    margin-top: 1px;
+  }
+  
+  .header__center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .header__center p {
+    margin: 0 10px;
+    text-transform: uppercase;
+  }
+  
+  .header__right {
+    display: flex;
+    text-transform: uppercase;
+  }
+  
+  .header__right p {
+    margin: 0 10px;
+  }
+  
+  .burger {
+    display: none;
+  }
+  
+  .navBurger {
+    display: none;
+  }
+  
+  @media only screen and (max-width: 1024px) {
+    nav {
+      display: none;
+      transform: translateX(-200%);
+    }
+  
+    .header {
+      margin: 0;
+      justify-content: flex-start;
+      align-items: center;
+    }
+  
+    nav.shown {
+      display: flex;
+      margin: 0;
+      flex-direction: column;
+      height: 100vh;
+      width: 50vw;
+      background-color: white;
+      align-items: center;
+      justify-content: space-around;
+      animation: transform 0.3s forwards;
+    }
+
+    /* nav.hide {
+        animation: transy 3.3s forwards;
+    } */
+  
+    .header__center {
+      flex: none;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+  
+    .header__logo {
+      display: flex;
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .burger {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin: 20px;
+    }
+  
+    .burger.shown {
+      display: none;
+    }
+  
+    .navBurger {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .navBurger:hover {
+      cursor: pointer;
+    }
+  
+    .burger:hover {
+      cursor: pointer;
+    }
+  
+    .header__right {
+      display: flex;
+      flex: 1;
+      text-transform: uppercase;
+      justify-content: space-evenly;
+      align-items: center;
+      flex-direction: column;
+    }
+  
+    .header__right {
+      display: flex;
+      flex: 1;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+    }
+  }
+  
+  @keyframes transform {
+    from {
+      transform: translate(-200%);
+    }
+    to {
+      transform: translate(0%);
+    }
+  }
+
+  @keyframes transy {
+    from {
+      transform: translate(0%);
+    }
+    to {
+      transform: translate(-200%);
+    }
+  }
